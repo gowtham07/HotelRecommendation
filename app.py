@@ -29,28 +29,28 @@ _shown_default_value_warning = True
 
 
 def give_best_hotel(query: str,option: str):
-    review,hotel,location = search(query)
+    review,hotel,location,city = search(query)
     
     if option == 'First':
         st.session_state.Reviews = review[0]
-        st.session_state.hotel_name = hotel[0]
+        st.session_state.hotel_name = hotel[0] + " in" + " " + city[0]
         st.session_state.hotel_location = location[0]
         
     if option == 'Second':
         st.session_state.Reviews = review[1]
-        st.session_state.hotel_name = hotel[1]   
+        st.session_state.hotel_name = hotel[1]   + " in" + " " + city[1]
         st.session_state.hotel_location = location[1]
     if option == 'Third':
         st.session_state.Reviews = review[2]
-        st.session_state.hotel_name = hotel[2] 
+        st.session_state.hotel_name = hotel[2] + " in" + " " + city[2]
         st.session_state.hotel_location = location[2]
     if option == 'Fourth':
         st.session_state.Reviews = review[3]
-        st.session_state.hotel_name = hotel[3]
+        st.session_state.hotel_name = hotel[3] + " in" + " " + city[3]
         st.session_state.hotel_location = location[3]
     if option == 'Fifth':
         st.session_state.Reviews = review[4]
-        st.session_state.hotel_name = hotel[4]   
+        st.session_state.hotel_name = hotel[4]   + " in" + " " + city[4]
         st.session_state.hotel_location = location[4]         
     # with tab1:
     return st.session_state.hotel_location 
