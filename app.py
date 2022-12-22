@@ -1,5 +1,5 @@
-import logging
-import logging.handlers
+# import logging
+# import logging.handlers
 import queue
 import threading
 import time
@@ -16,9 +16,9 @@ from streamlit.elements.utils import _shown_default_value_warning
 _shown_default_value_warning = True
 from streamlit_webrtc import WebRtcMode, webrtc_streamer
 
-HERE = Path(__file__).parent
+# HERE = Path(__file__).parent
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 
 # This code is based on https://github.com/streamlit/demo-self-driving/blob/230245391f2dda0cb464008195a470751c01770b/streamlit_app.py#L48  # noqa: E501
@@ -87,7 +87,7 @@ def give_best_hotel(query: str,option: str):
     # with tab1:
 
 def reset():
-    
+
     st.session_state.hotel_name = " "
     st.session_state.Reviews = " "
        
@@ -163,19 +163,19 @@ def main():
 if __name__ == "__main__":
     import os
 
-    DEBUG = os.environ.get("DEBUG", "false").lower() not in ["false", "no", "0"]
+    # DEBUG = os.environ.get("DEBUG", "false").lower() not in ["false", "no", "0"]
 
-    logging.basicConfig(
-        format="[%(asctime)s] %(levelname)7s from %(name)s in %(pathname)s:%(lineno)d: "
-        "%(message)s",
-        force=True,
-    )
+    # logging.basicConfig(
+    #     format="[%(asctime)s] %(levelname)7s from %(name)s in %(pathname)s:%(lineno)d: "
+    #     "%(message)s",
+    #     force=True,
+    # )
 
-    logger.setLevel(level=logging.DEBUG if DEBUG else logging.INFO)
+    # logger.setLevel(level=logging.DEBUG if DEBUG else logging.INFO)
 
-    st_webrtc_logger = logging.getLogger("streamlit_webrtc")
-    st_webrtc_logger.setLevel(logging.DEBUG)
+    # st_webrtc_logger = logging.getLogger("streamlit_webrtc")
+    # st_webrtc_logger.setLevel(logging.DEBUG)
 
-    fsevents_logger = logging.getLogger("fsevents")
-    fsevents_logger.setLevel(logging.WARNING)
+    # fsevents_logger = logging.getLogger("fsevents")
+    # fsevents_logger.setLevel(logging.WARNING)
     main()
