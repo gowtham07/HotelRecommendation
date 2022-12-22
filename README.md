@@ -24,3 +24,6 @@ Entertainment
 # HotelRecommendation
 
 ![Alt text](image.png "Optional Title")
+
+# App link 
+[HotelRecommender](https://gowtham07-hotelrecommendation-app-bv57zs.streamlit.app/)
