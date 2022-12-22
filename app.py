@@ -12,8 +12,7 @@ from hotels import search
 import numpy as np
 #import pydub
 import streamlit as st
-import folium
-from streamlit_folium import folium_static
+
 
 
 #create folium object
@@ -36,7 +35,7 @@ def give_best_hotel(query: str,option: str):
         st.session_state.Reviews = review[0]
         st.session_state.hotel_name = hotel[0]
         st.session_state.hotel_location = location[0]
-        folium.Map(location=st.session_state.hotel_location)
+        
     if option == 'Second':
         st.session_state.Reviews = review[1]
         st.session_state.hotel_name = hotel[1]   
@@ -109,7 +108,7 @@ def main():
         
 
         st.text_area(label ="Hotel Review",value=" ", height =200,on_change=give_best_hotel, key='Reviews')
-        st.text_area(label ="Hotel Name",value=" ", height =10, on_change=give_best_hotel, key='hotel_name')
+        st.text_area(label ="Hotel Name",value=" ", height =1, on_change=give_best_hotel, key='hotel_name')
        #my_map= folium.Map(location=st.session_state.hotel_location)
         # with tab5:
         
