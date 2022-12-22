@@ -3,7 +3,7 @@ import os
 import json
 from time import time
 
-import umap
+# import umap
 import torch
 import cohere
 import warnings
