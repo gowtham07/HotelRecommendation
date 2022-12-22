@@ -107,8 +107,8 @@ def main():
         option = st.selectbox('Which selection do you need to display from five matches',('First', 'Second', 'Third','Fourth','Fifth'))
         
 
-        st.text_area(label ="Hotel Review",value=" ", height =200,on_change=give_best_hotel, key='Reviews')
-        st.text_area(label ="Hotel Name",value=" ", height =1, on_change=give_best_hotel, key='hotel_name')
+        # st.text_area(label ="Hotel Review",value=" ", height =200,on_change=give_best_hotel, key='Reviews')
+        # st.text_area(label ="Hotel Name",value=" ", height =1, on_change=give_best_hotel, key='hotel_name')
        #my_map= folium.Map(location=st.session_state.hotel_location)
         # with tab5:
         
@@ -122,7 +122,8 @@ def main():
         cap_button = st.button("Give best hotels", on_click=give_best_hotel, args=(text_des,option,)) # Give button a variable name
         if cap_button:
             map_data = pd.DataFrame({'lat': [st.session_state.hotel_location[0]], 'lon': [st.session_state.hotel_location[1]]})
-
+            st.text_area(label ="Hotel Review",value=" ", height =200,on_change=give_best_hotel, key='Reviews')
+            st.text_area(label ="Hotel Name",value=" ", height =1, on_change=give_best_hotel, key='hotel_name')
             st.map(map_data) 
             # m = folium.Map(location=st.session_state.hotel_location, zoom_start=30)
             # folium_static(m)
