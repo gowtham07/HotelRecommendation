@@ -87,6 +87,7 @@ def give_best_hotel(query: str,option: str):
     # with tab1:
 
 def reset():
+    
     st.session_state.hotel_name = " "
     st.session_state.Reviews = " "
        
