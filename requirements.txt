@@ -11,4 +11,5 @@ cohere
 pandas
 altair
 matplotlib
-
+folium
+streamlit_folium

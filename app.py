@@ -3,7 +3,7 @@
 import queue
 import threading
 import time
-
+import pandas as pd
 from collections import deque
 from pathlib import Path
 from typing import List
@@ -12,6 +12,12 @@ from hotels import search
 import numpy as np
 #import pydub
 import streamlit as st
+import folium
+from streamlit_folium import folium_static
+
+
+#create folium object
+
 from streamlit.elements.utils import _shown_default_value_warning
 _shown_default_value_warning = True
 
@@ -24,24 +30,31 @@ _shown_default_value_warning = True
 
 
 def give_best_hotel(query: str,option: str):
-    review,hotel = search(query)
+    review,hotel,location = search(query)
     
     if option == 'First':
         st.session_state.Reviews = review[0]
         st.session_state.hotel_name = hotel[0]
+        st.session_state.hotel_location = location[0]
+        folium.Map(location=st.session_state.hotel_location)
     if option == 'Second':
         st.session_state.Reviews = review[1]
         st.session_state.hotel_name = hotel[1]   
+        st.session_state.hotel_location = location[1]
     if option == 'Third':
         st.session_state.Reviews = review[2]
         st.session_state.hotel_name = hotel[2] 
+        st.session_state.hotel_location = location[2]
     if option == 'Fourth':
         st.session_state.Reviews = review[3]
         st.session_state.hotel_name = hotel[3]
+        st.session_state.hotel_location = location[3]
     if option == 'Fifth':
         st.session_state.Reviews = review[4]
-        st.session_state.hotel_name = hotel[4]            
+        st.session_state.hotel_name = hotel[4]   
+        st.session_state.hotel_location = location[4]         
     # with tab1:
+    return st.session_state.hotel_location 
 
 def reset():
 
@@ -69,7 +82,8 @@ def main():
           st.session_state.Reviews = ""
         if "hotel_name" not in st.session_state:
           st.session_state.hotel_name = ""
-
+        if "hotel_location" not in st.session_state:
+           st.session_state.hotel_location = ""
 
         with st.sidebar:
             with st.expander('HotelRecommender'):
@@ -95,7 +109,8 @@ def main():
         
 
         st.text_area(label ="Hotel Review",value=" ", height =200,on_change=give_best_hotel, key='Reviews')
-        st.text_area(label ="Hotel Name",value=" ", height =50, on_change=give_best_hotel, key='hotel_name')
+        st.text_area(label ="Hotel Name",value=" ", height =10, on_change=give_best_hotel, key='hotel_name')
+       #my_map= folium.Map(location=st.session_state.hotel_location)
         # with tab5:
         
         #     panel3_1=st.empty()
@@ -106,6 +121,17 @@ def main():
         #     panel3_2=st.empty()
         
         cap_button = st.button("Give best hotels", on_click=give_best_hotel, args=(text_des,option,)) # Give button a variable name
+        if cap_button:
+            map_data = pd.DataFrame({'lat': [st.session_state.hotel_location[0]], 'lon': [st.session_state.hotel_location[1]]})
+
+            st.map(map_data) 
+            # m = folium.Map(location=st.session_state.hotel_location, zoom_start=30)
+            # folium_static(m)
+            # coordinates = tuple(st.session_state.hotel_location)
+            # _map = gmaps.figure(center=coordinates, zoom_level=12)
+            # snippet = embed.embed_snippet(views=_map)
+            # html = embed.html_template.format(title="", snippet=snippet)
+            # components.html(html, height=500,width=500)
         reset_button = st.button("Reset", on_click=reset)
     # if cap_button: # Make button a condition.
     #     # start_capture()
