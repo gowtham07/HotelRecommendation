@@ -13,8 +13,7 @@ Travelers often struggle with bad experiences and miss great ones with the accom
 * "Find a good hotel"
 * "Hotels nearby"
 
-## Credits
-Andrei G
+
 
 ## Category
 **Information**
@@ -23,3 +22,5 @@ Entertainment
 ## Tags
 
 # HotelRecommendation
+
+![Alt text](image.png "Optional Title")

@@ -47,6 +47,7 @@ def reset():
 
     st.session_state.hotel_name = " "
     st.session_state.Reviews = " "
+    
        
     #  panel3_1=st.empty()
      
