@@ -14,7 +14,7 @@ import numpy as np
 import streamlit as st
 from streamlit.elements.utils import _shown_default_value_warning
 _shown_default_value_warning = True
-from streamlit_webrtc import WebRtcMode, webrtc_streamer
+
 
 # HERE = Path(__file__).parent
 
