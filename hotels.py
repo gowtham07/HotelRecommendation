@@ -90,8 +90,10 @@ def search(query: str):
     review_list = []
     hotels = []
     hotel_location = []
+    city = []
     for i in range(len(similarity)):
        review_list.append(df.iloc[similarity[i]]['reviews.text']+ " The hotel name is "+ df.iloc[similarity[i]]['name']) 
        hotels.append(df.iloc[similarity[i]]['name']) 
        hotel_location.append([df.iloc[similarity[i]]['latitude'],df.iloc[similarity[i]]['longitude']])
-    return review_list,hotels,hotel_location
+       city.append(df.iloc[similarity[i]]['city'])
+    return review_list,hotels,hotel_location, city
