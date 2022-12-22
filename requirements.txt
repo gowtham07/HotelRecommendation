@@ -13,3 +13,5 @@ altair
 matplotlib
 folium
 streamlit_folium
+langdetect
+
