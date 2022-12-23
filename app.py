@@ -14,7 +14,7 @@ import numpy as np
 import streamlit as st
 import requests
 from langdetect import detect, detect_langs
-
+import gcld3
 #create folium object
 
 from streamlit.elements.utils import _shown_default_value_warning
@@ -25,8 +25,14 @@ _shown_default_value_warning = True
 
 # logger = logging.getLogger(__name__)
 def trans(query,review):
-    lang = detect(query)
-    lang_r = detect(review) 
+    # lang = detect(query)
+    # lang_r = detect(review) 
+    detector = gcld3.NNetLanguageIdentifier(min_num_bytes=0, 
+                                        max_num_bytes=1000)
+    result = detector.FindLanguage(text=query)  
+    lang = result.language 
+    result = detector.FindLanguage(text=review)  
+    lang_r = result                               
     reviews = review.split(".")
     rev = reviews[0:len(reviews)-1]
     if lang != 'en':

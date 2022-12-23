@@ -14,4 +14,5 @@ matplotlib
 folium
 streamlit_folium
 langdetect
+gcld3
 
