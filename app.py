@@ -85,11 +85,11 @@ def main():
            st.session_state.hotel_location = ""
 
         with st.sidebar:
-            with st.expander('HotelRecommender'):
+            with st.expander('CoHotel'):
                 st.image('nomad.jpeg')       
-                st.markdown('HotelRecommender helps travellers to find best hotels along with some reviews by other customers according to their input description in a city using modern AI solutions. Users can type in English, German, Spanish languages etc..')
+                st.markdown('CoHotel helps travellers to find best hotels along with some reviews by other customers according to their input description in a city using modern AI solutions. Users can type in English, German, Spanish languages etc..')
             
-        st.header("HotelRecommender")
+        st.header("CoHotel")
         st.markdown(
             """
             Making life easier for nomads!
