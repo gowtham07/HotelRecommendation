@@ -103,8 +103,8 @@ def main():
             <b>Making life easier for nomads!
 
             Recommends you the hotel with best reviews in city you want!!</b>
-    """
-       , unsafe_allow_html=True)
+            """
+       ,unsafe_allow_html=True)
 
     
 
