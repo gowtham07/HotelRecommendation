@@ -84,6 +84,14 @@ def main():
         if "hotel_location" not in st.session_state:
            st.session_state.hotel_location = ""
 
+        st.markdown("""
+             <style>
+               .big-font {
+            font-size:10px !important; 
+             }
+            </style>
+            """, unsafe_allow_html=True)    
+
         with st.sidebar:
             with st.expander('CoHotel'):
                 st.image('nomad.jpeg')       
@@ -114,7 +122,7 @@ def main():
         
         #     panel3_1=st.empty()
             
-
+    
         # with tab6:
 
         #     panel3_2=st.empty()
