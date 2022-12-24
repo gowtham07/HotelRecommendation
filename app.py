@@ -110,19 +110,29 @@ def main():
         if "hotel_location" not in st.session_state:
            st.session_state.hotel_location = ""
 
+        
+
+        st.markdown("""
+             <style>
+               .big-font {
+            font-size:10px !important; 
+             }
+            </style>
+            """, unsafe_allow_html=True)   
+
         with st.sidebar:
-            with st.expander('CoHotel'):
+            with st.expander('CoHotel'): 
                 st.image('nomad.jpeg')       
                 st.markdown('CoHotel helps travellers to find best hotels along with some reviews by other customers according to their input description in a city using modern AI solutions. Users can type in English, German, Spanish languages etc..')
             
         st.header("CoHotel")
         st.markdown(
             """
-            Making life easier for nomads!
+            <b>Making life easier for nomads!
 
-            Recommends you the hotel with best reviews in city you want!!
-    """
-        )
+            Recommends you the hotel with best reviews in city you want!!</b>
+            """
+        ,unsafe_allow_html=True)
 
     
 
