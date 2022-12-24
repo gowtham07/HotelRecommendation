@@ -26,4 +26,4 @@ Entertainment
 ![Alt text](image.png "Optional Title")
 
 # App link 
-[CoHotel](https://gowtham07-hotelrecommendation-app-bv57zs.streamlit.app/)
+[CoHotel](https://gowtham07-hotelrecommendation-app-app-translate-ogxqgw.streamlit.app/)
