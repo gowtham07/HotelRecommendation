@@ -43,6 +43,7 @@ def trans(query,review):
             indexx = result.index('","')
             result = result[4:int(indexx)]
             trans_texts = trans_texts + result
+             
     else:
            trans_texts = review
     return trans_texts   
@@ -114,7 +115,7 @@ def main():
                 st.image('nomad.jpeg')       
                 st.markdown('HotelRecommender helps travellers to find best hotels along with some reviews by other customers according to their input description in a city using modern AI solutions. Users can type in English, German, Spanish languages etc..')
             
-        st.header("HotelRecommender")
+        st.header("CoHotel")
         st.markdown(
             """
             Making life easier for nomads!
