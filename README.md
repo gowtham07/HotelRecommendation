@@ -1,4 +1,4 @@
-# <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/hotel.svg" card_color="#22A7F0" width="50" height="50" style="vertical-align:bottom"/> Hotel Recommender
+# <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/hotel.svg" card_color="#22A7F0" width="50" height="50" style="vertical-align:bottom"/> CoHotel
 Recommend and book the most suitable accommodation for you based on your purpose, mood, and budget.
 
 ## About
@@ -21,9 +21,9 @@ Entertainment
 
 ## Tags
 
-# HotelRecommendation
+# CoHotel
 
-![Alt text](image.png "Optional Title")
+![Alt text](images.png "Optional Title")
 
 # App link 
 [CoHotel](https://gowtham07-hotelrecommendation-app-bv57zs.streamlit.app/)
