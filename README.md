@@ -27,3 +27,6 @@ Entertainment
 
 # App link 
 [CoHotel](https://gowtham07-hotelrecommendation-app-bv57zs.streamlit.app/)
+
+# Improvements
+Will be adding a database like vector or chromadb to store the embeddings. Also maybe use newer models for good performance.
